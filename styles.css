@@ -204,6 +204,7 @@ body {
     line-height: 34.3pt;
     font-family: "apocRegular";
     text-transform: uppercase;
+    text-decoration: underline;
     text-align: center;
     -moz-transform: translateX(100%);
     -webkit-transform: translateX(100%);
@@ -407,6 +408,7 @@ figcaption{
     font-size: 32pt;
     color: red;
     text-transform: uppercase;
+    text-decoration: underline;
     font-family: "apocRegular";
     line-height: 55pt;
     text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
