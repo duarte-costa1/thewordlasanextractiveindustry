@@ -1,0 +1,470 @@
+@font-face {
+    font-family: 'apocItalic';
+    src: url('fonts/apoclctrialregular_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'apocRegular';
+    src: url('fonts/apoclctrial-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'apocBold';
+    src: url('fonts/apoclctrial-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'neueRoman';
+    src: url('fonts/neuehaasdisplay-roman-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'neueRomanItalic';
+    src: url('fonts/neuehaasdisplay-romanitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'neueMedium';
+    src: url('fonts/neuehaasdisplay-mediu-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'perpetua';
+    src: url('fonts/perpetua_titling_mt_std_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+head {
+    display: none;
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    background-color: black;
+}
+
+.back {
+    position: absolute;
+    z-index: 1;
+}
+
+/* BOTÃO */
+#starbutton {
+    position: fixed;
+    text-decoration: none;
+    color: red;
+    border: none;
+    outline: none;
+    font-size: 30pt;
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 1;
+    text-shadow: 0px 0px 10px red, 0px 0px 10px red;
+    cursor: pointer;
+}
+
+#starbutton:hover {
+    transition: all 0.2s;
+    filter: blur(3px);
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+}
+
+#starbutton:active {
+    filter: blur(3px);
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+}
+
+.backgroundcontent {
+    display: block;
+    background-color: black;
+    width: 100%;
+    height: calc(100vh - 75px);
+    border-radius: 36px;
+    filter: drop-shadow(0rem -0.1rem 0.5rem black);
+    text-align: center; 
+    position: relative; 
+}
+
+#backLayer{
+    z-index: -100;
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#imageLayer{
+    z-index: 100;
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    scroll-behavior: unset;
+}
+
+#frontLayer{
+    display: block;
+    z-index: 10;
+    height: 100%;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.topLine { 
+  width: 100%;
+  height: 3px;
+  animation: chrome 8s linear infinite;
+  background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(255, 0, 0, 1) 100%);
+  background-size: 200% 200%;
+  filter: drop-shadow(0rem -0.05rem 1rem red);
+}
+
+.bottomLine { 
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    animation: chrome 8s linear infinite;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(255, 0, 0, 1) 100%);
+    background-size: 200% 200%;
+    filter: drop-shadow(0rem -0.05rem 1rem red);
+  }
+
+@keyframes chrome {
+  0% {
+    background-position: 0% 200%;
+  }
+
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+
+.arrowContainer{
+    width: auto;
+    cursor: pointer;
+    margin-top: 10rem;
+    text-decoration: none;
+    text-align: center;
+    filter: drop-shadow(0rem -0.08rem 0.2rem red);
+}
+
+.arrowContainer:link, 
+.arrowContainer:visited{
+    color: #c50000;
+}
+
+.arrowContainer:hover{
+    transition: all 0.2s;
+    filter: blur(3px);
+}
+
+/* Animação loop */
+
+.loop {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.marquee {
+    height: 40px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.marquee p {
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 18pt;
+    line-height: 34.3pt;
+    font-family: "apocRegular";
+    text-transform: uppercase;
+    text-align: center;
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    -moz-animation: scroll-left 2s linear infinite;
+    -webkit-animation: scroll-left 2s linear infinite;
+    animation: scroll-left 100s linear infinite;
+}
+
+@-moz-keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes scroll-left {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+.marquee a{
+    color: red;
+    text-decoration: none;
+}
+
+.marquee a:hover{
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: underline;
+    filter: blur(3px);
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+}
+
+.marquee a:active{
+    color: red;
+    text-decoration: underline;
+    filter: blur(3px);
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+
+}
+
+/*Title section*/
+
+.hero {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-content: center;
+    animation: glow 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 8px #a80000, 0px 0px 8px #a80000;
+    }
+
+    50% {
+        text-shadow: 0px 0px 8px #d20000, 0px 0px 8px #d20000;
+    }
+
+    100% {
+        text-shadow: 0px 0px 8px #ff0000, 0px 0px 8px #ff0000;
+    }
+}
+
+.main1 {
+    font-size: 80px;
+    color: red;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "perpetua";
+    line-height: 90%;
+}
+
+.main2 {
+    font-size: 80px;
+    color: red;
+    margin: 0;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-family: "neueRoman";
+    line-height: 90%;
+    margin-top: -2.2rem;
+}
+
+/* About */
+
+.about {
+    width: 54%;
+    margin-left: 23%;
+    margin-right: 23%;
+    margin-bottom: 14%;
+    text-align: center;
+    box-sizing: border-box;
+    display: block;
+    font-size: 19pt;
+    line-height: 27pt;
+    font-family: "apocRegular";
+    color: red;
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+}
+
+
+/* Text + Spacers */
+
+.spacer {
+        position: relative;
+        margin-top: 5rem;
+}
+
+.mainstar {
+    font-size: 80px;
+    animation: glow 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 8px #a80000, 0px 0px 8px #a80000;
+    }
+
+    50% {
+        text-shadow: 0px 0px 8px #d20000, 0px 0px 8px #d20000;
+    }
+
+    100% {
+        text-shadow: 0px 0px 8px #ff0000, 0px 0px 8px #ff0000;
+    }
+}
+
+.maincontent {
+    font-size: 30pt;
+    color: red;
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-family: "apocRegular";
+    line-height: 53pt;
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+    text-decoration: none;
+}
+
+figure{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    height: max-content;
+    width: max-content;
+    margin-inline-end: 10%;
+    margin-block: 0;
+    filter: drop-shadow(0rem -0.1rem 0.5rem red);
+}
+
+figure img{
+    display: block;
+    height: 18rem;
+    margin-top: 20rem;
+}
+
+figcaption{
+    background: rgba(0, 0, 0, 0.9);
+    color: red;
+    font-family: "neueRoman";
+    text-shadow: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    line-height: 13pt;
+    font-size: 10pt;
+    text-align: left;
+    margin-inline: 0.25pt;
+}
+
+.caps  {
+    font-size: 32pt;
+    color: red;
+    text-transform: uppercase;
+    font-family: "apocRegular";
+    line-height: 55pt;
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+}
+
+.caps:hover {
+    transition: all 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    filter: blur(3px);
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+}
+
+.caps:hover .imgOverlay {
+    display:block;
+}
+
+.caps:hover figure {
+    display:block;
+}
+
+.caps:hover p{
+    opacity: 0.8;
+}
+
+.minispacer {
+        position: relative;
+}
+
+.secstar {
+    font-size: 30px;
+    animation: glow 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 8px #a80000, 0px 0px 8px #a80000;
+    }
+
+    50% {
+        text-shadow: 0px 0px 8px #d20000, 0px 0px 8px #d20000;
+    }
+
+    100% {
+        text-shadow: 0px 0px 8px #ff0000, 0px 0px 8px #ff0000;
+    }
+}
+
+.footer {
+    font-size: 9pt;
+    color: red;
+    margin-top: 5rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0;
+    text-transform: none;
+    font-family: "apocRegular";
+    line-height: 11pt;
+    text-shadow: 0px 0px 10px #c50000, 0px 0px 10px #c50000;
+}
